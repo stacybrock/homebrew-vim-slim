@@ -1,11 +1,9 @@
-# Stacybrock Vim-slim
+# vim-slim
 
-## How do I install these formulae?
+A slimmer build of vim, without lua, perl, and ruby dependencies.
 
-`brew install stacybrock/vim-slim/<formula>`
+This formula tracks homebrew-core: https://github.com/Homebrew/homebrew-core/raw/master/Formula/vim.rb
 
-Or `brew tap stacybrock/vim-slim` and then `brew install <formula>`.
+## Installation
 
-## Documentation
-
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+`brew install -s stacybrock/vim-slim/<formula>`
