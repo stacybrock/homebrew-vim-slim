@@ -6,4 +6,7 @@ This formula tracks homebrew-core: https://github.com/Homebrew/homebrew-core/raw
 
 ## Installation
 
-`brew install -s stacybrock/vim-slim/<formula>`
+```
+$ brew tap stacybrock/vim-slim
+$ brew install -s stacybrock/vim-slim/<formula>
+```
