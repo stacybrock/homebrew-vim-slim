@@ -8,5 +8,5 @@ This formula tracks homebrew-core: https://github.com/Homebrew/homebrew-core/raw
 
 ```
 $ brew tap stacybrock/vim-slim
-$ brew install -s stacybrock/vim-slim/<formula>
+$ brew install -s stacybrock/vim-slim/vim
 ```
