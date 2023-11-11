@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/v9.0.2050.tar.gz"
-  sha256 "0387014cba4283d55e3b6611b7b574c81670fbb5d195d0fc7b264b94e95592e3"
+  url "https://github.com/vim/vim/archive/refs/tags/v9.0.2100.tar.gz"
+  sha256 "01e08b3234a357f6b17e80a695390ed537b50d10b9c95bf5b1ec9182e2c0725c"
   license "Vim"
   head "https://github.com/vim/vim.git", branch: "master"
 
@@ -17,19 +17,23 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "293d8ae75fb44244bb916e4422401704ab5db8c2b50d01d17073982baa380966"
-    sha256 arm64_ventura:  "ffeea762ce0c0f9e247f1f979353b18a70140d64e8c95cce0fd0cee507e150b9"
-    sha256 arm64_monterey: "2d2f2237bb9506822dde3bcf5fa32ec818cd97a822d6c966ac0c42a466e3c334"
-    sha256 sonoma:         "e318fdc17503ae8721677a6ecce7488aa2910beb6148c05ba48ac363d8a9050f"
-    sha256 ventura:        "5b8ed99f3adaeed4a523fdbffe6b47cbd35f92b7462cacb2eeeee3f86048e7d4"
-    sha256 monterey:       "a2a727cf7cab6dd79055835e8662e838671bc455fd1cbdf3d86f71e684b52b63"
-    sha256 x86_64_linux:   "9d272077004910f255d40e46a36749cd32d8ec2e2ffaea9804a3735052f9d8ad"
+    sha256 arm64_sonoma:   "13ffe1ae078246cd5f4c4337b1e1a6ead785e2475c09038dd1df53cbf690387b"
+    sha256 arm64_ventura:  "113548cad7e73b0fdbf1c3a29aa7f175d8772f2a5fa1fa70f2db46b69ebb83f9"
+    sha256 arm64_monterey: "3ce50377d2c8a510dd63a2e9001a622a9c107b92d88017119aa19940e7883683"
+    sha256 sonoma:         "b1d3e93c7f651af88e9b3604835d1e6bdfaaf0e23807b01beecf665084f2abbb"
+    sha256 ventura:        "22d54c1c8cddba381aa306ee09bdfd5c0395689f9f345b8aa581cc56a46a060d"
+    sha256 monterey:       "83217191dd8fefbfc615c7f49eb8ebe7f9cdabd6e3e8e7cd31265d411f2d1bfb"
+    sha256 x86_64_linux:   "b0ade1c8deda0797c62232cfd644edcc4b14eadc931e0c481033f0fbdce26f2d"
   end
 
   depends_on "gettext"
   depends_on "libsodium"
   depends_on "ncurses"
   depends_on "python@3.12"
+
+  on_linux do
+    depends_on "acl"
+  end
 
   conflicts_with "ex-vi",
     because: "vim and ex-vi both install bin/ex and bin/view"
