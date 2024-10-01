@@ -38,7 +38,6 @@ class Vim < Formula
   depends_on "ncurses"
   depends_on "python@3.12"
 
-
   on_linux do
     depends_on "acl"
   end
