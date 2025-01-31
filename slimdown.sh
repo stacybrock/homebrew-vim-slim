@@ -9,3 +9,8 @@ sed -i '' \
   -e '/--enable-rubyinterp/d' \
   -e 's/"--without-x",/"--without-x"/' \
   Formula/vim.rb
+
+# second pass of sed to clean up extraneous blank lines
+sed -i '' \
+  -e '/^$/N;/^\n$/s/^\n$//;P;D' \
+  Formula/vim.rb
