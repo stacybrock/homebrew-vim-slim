@@ -2,8 +2,8 @@ class VimSlim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/refs/tags/v9.1.1800.tar.gz"
-  sha256 "37816d901e5deeae54415e210673a0a69f33deadc7b9ebae501008ac11273292"
+  url "https://github.com/vim/vim/archive/refs/tags/v9.1.1850.tar.gz"
+  sha256 "bdbb731902bec15784789a24d93f201d541ba942d9f663b446bd9f62d896b907"
   license "Vim"
   head "https://github.com/vim/vim.git", branch: "master"
 
@@ -25,18 +25,18 @@ class VimSlim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "860944e9f955c71b6f1467e025b5c40f66e37539342ec7a6fcdcfe28e3a5ad0e"
-    sha256 arm64_sequoia: "1b0f565c24a22cfe4e79b470e189c1d526b6b1434b826ebf336ecf65bc626cea"
-    sha256 arm64_sonoma:  "7fbf2c32e2523377d41a3ee3bef989f7879ed5d21d22951b8fb36560cecbaf86"
-    sha256 sonoma:        "441832630e7862760091c1e1ad3aef50a5841a0d6e529739d77476e2e2fa9cab"
-    sha256 arm64_linux:   "1e58567d4d2786ce5182fdbf0bf5a127a3526e49fb721dcf1279119ac13f8a73"
-    sha256 x86_64_linux:  "c2f3d75e759cba89d4bcbb8f0742062be3dc79ccfde9c28db05b63fb417ab55e"
+    sha256 arm64_tahoe:   "0081cc54900b22ca61f1d4b18547a56f3e5faee8e5986516a692756cc47333de"
+    sha256 arm64_sequoia: "b19ad1ae7d0c165d94b59e710bb0576af50e973ea2f95b01028f79f7f89a7fa6"
+    sha256 arm64_sonoma:  "b774316eeb8bae2b5c7d567724fc0a3069e137c83c57942b8ad34fa85f4cfc78"
+    sha256 sonoma:        "bfc826e05c446b6df72d593178a6b8e860cf0c8157685f3c3a5dbd92087b4cf2"
+    sha256 arm64_linux:   "98d817ca039fec81bccc4c45a547cb470c0ada47f7043c1e7066350ff30aef45"
+    sha256 x86_64_linux:  "a689dee71641417f43136ec97d3962ac46fb33a0fe7574c1e7a9c64fa3b0d03e"
   end
 
   depends_on "gettext"
   depends_on "libsodium"
   depends_on "ncurses"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   on_linux do
     depends_on "acl"
@@ -49,7 +49,7 @@ class VimSlim < Formula
     because: "vim and macvim both install vi* binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
 
     # https://github.com/Homebrew/homebrew-core/pull/1046
     ENV.delete("SDKROOT")
