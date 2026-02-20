@@ -5,7 +5,6 @@ wget https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/v/v
 sed -i '' \
   -e 's/class Vim/class VimSlim/' \
   -e '/lua/d' \
-  -e '/perl/d' \
   -e '/depends_on "ruby"/d' \
   -e '/--enable-rubyinterp/d' \
   -e 's/"--without-x",/"--without-x"/' \
