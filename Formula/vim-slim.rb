@@ -2,8 +2,8 @@ class VimSlim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/refs/tags/v9.2.0650.tar.gz"
-  sha256 "de9be55e39f7da67b3871974952d7cf61bab9d362434d9ff22d46fb2855a6dac"
+  url "https://github.com/vim/vim/archive/refs/tags/v9.2.0750.tar.gz"
+  sha256 "7d460830e12082b541c34b0b96942ebface1ad9fa0b77245930717c0ccf8b664"
   license "Vim"
   compatibility_version 1
   head "https://github.com/vim/vim.git", branch: "master"
@@ -26,12 +26,12 @@ class VimSlim < Formula
   end
 
   bottle do
-    sha256 arm64_tahoe:   "da180237836700a7c12044b6f79214bc567e8a26522162d2bebca758bd4a58ca"
-    sha256 arm64_sequoia: "128cd809848721689a60cdbbced98d5100fdeb41c2ddee2fc62755328f32d746"
-    sha256 arm64_sonoma:  "aba8e3862841bd7773385f934dc160b6bccf21447aea9c793614189ad9c5e48c"
-    sha256 sonoma:        "451cbe994c53231d10decbae5b638d2b5bfa5e013d3d31371205adbe5aa02c1a"
-    sha256 arm64_linux:   "94db734821eb92630c4f953ce979834c873bce9ae4090fc2e890ac27fc2f833f"
-    sha256 x86_64_linux:  "fa3f7c2d4ce662ead54726bd6008f1ebe73185ec5d0bdb2744105b93af2636c1"
+    sha256 arm64_tahoe:   "4dc76cbdcea2bccd95ece66af3560df5860e8070b693dd4b52cdd16d86fa41c6"
+    sha256 arm64_sequoia: "6b68629a286c189a77b367b113dd23beedccf4ae4aa6721b270a8d506f939a65"
+    sha256 arm64_sonoma:  "46c741d72f675806fdae57710c0da1aad488ff8266cf10b4b372ecea0f2f467b"
+    sha256 sonoma:        "30dbce8251f280f7b228633803aa480fc2821311ac3c917ebc7f28efbcc40ffc"
+    sha256 arm64_linux:   "8ca456e824e3dd7745ce759ba77a2841e39f441cafee251b688b4d9691c4d0da"
+    sha256 x86_64_linux:  "af67220713d538f3a2b845711db9daa3f0aa0ee9e492373eb9c82b3a8ee996c7"
   end
 
   depends_on "gettext" => :build
@@ -56,7 +56,7 @@ class VimSlim < Formula
   def extra_deps = deps.select { |dep| dep.build? && dep.test? }
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.14"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", formula_opt_libexec("python@3.14")/"bin"
 
     # Allow dynamically loading formulae libraries when not linked
     extra_deps.each do |dep|
