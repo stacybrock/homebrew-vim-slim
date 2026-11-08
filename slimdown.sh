@@ -14,3 +14,7 @@ sed -i '' \
 sed -i '' \
   -e '/^$/N;/^\n$/s/^\n$//;P;D' \
   Formula/vim-slim.rb
+
+# write commit message to stdout
+newver=`git --no-pager diff --word-diff=porcelain | grep '^+' | grep -v '^+++' | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n1`
+echo "Update formula for $newver"
